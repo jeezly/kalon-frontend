@@ -1,0 +1,320 @@
+.mis-clases {
+  background-color: #FFF7EB;
+  min-height: 100vh;
+    padding-top: 80px; /* Espacio fijo para el header */
+
+}
+
+.cliente-main {
+  padding-top: 80px;
+}
+
+.classes-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.classes-container h1 {
+  font-family: 'Agustey', serif;
+  color: #5F5142;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #E6DFC8;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-family: 'Helios', sans-serif;
+  font-weight: 500;
+  color: #7A6A5A;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.tab-button:hover {
+  color: #5F5142;
+}
+
+.tab-button.active {
+  color: #5F5142;
+  font-weight: 600;
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #9D8169;
+}
+
+.reservations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reservation-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+  transition: transform 0.3s;
+}
+
+.reservation-card:hover {
+  transform: translateY(-3px);
+}
+
+.reservation-card.pendiente {
+  border-left: 4px solid #FFF3CD;
+}
+
+.reservation-card.asistio {
+  border-left: 4px solid #D4EDDA;
+}
+
+.reservation-card.cancelada {
+  border-left: 4px solid #F8D7DA;
+}
+
+.reservation-card.no_show {
+  border-left: 4px solid #F8D7DA;
+}
+
+.reservation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.reservation-header h3 {
+  font-family: 'Helios', sans-serif;
+  color: #5F5142;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.pendiente {
+  background-color: #FFF3CD;
+  color: #856404;
+}
+
+.status-badge.asistio {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.status-badge.cancelada {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.status-badge.no_show {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.reservation-details {
+  margin: 1rem 0;
+}
+
+.reservation-details p {
+  margin: 0.5rem 0;
+  color: #7A6A5A;
+  font-family: 'Helios', sans-serif;
+}
+
+.reservation-details strong {
+  color: #5F5142;
+}
+
+.reservation-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.primary-button {
+  background-color: #5F5142;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Helios', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primary-button:hover {
+  background-color: #7A6A5A;
+}
+
+.cancel-button {
+  background-color: #F8D7DA;
+  color: #721C24;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Helios', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cancel-button:hover {
+  background-color: #F5C6CB;
+}
+
+.secondary-button {
+  background-color: #E6DFC8;
+  color: #5F5142;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Helios', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondary-button:hover {
+  background-color: #D9D0B4;
+}
+
+.no-reservations {
+  text-align: center;
+  padding: 3rem;
+  color: #7A6A5A;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+}
+
+.no-reservations p {
+  margin: 1.5rem 0;
+  font-family: 'Helios', sans-serif;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #E6DFC8;
+  border-top: 5px solid #9D8169;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal-content h2 {
+  font-family: 'Agustey', serif;
+  color: #5F5142;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin-bottom: 1.5rem;
+  font-family: 'Helios', sans-serif;
+  color: #5F5142;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #7A6A5A;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .classes-container {
+    padding: 1.5rem;
+  }
+  
+  .tabs {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .tab-button {
+    text-align: left;
+    padding: 0.5rem 0;
+  }
+  
+  .tab-button.active::after {
+    display: none;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .modal-actions button {
+    width: 100%;
+  }
+}

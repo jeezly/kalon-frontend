@@ -1,0 +1,99 @@
+/* Footer.css */
+.footer {
+  background-color: #FFF7EB;
+  color: #5F5142;
+  padding: 3rem 0 0;
+  border-top: 1px solid #E6DFC8;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Helios', sans-serif;
+}
+
+/* --- Iconos en café Kalon (#5F5142) --- */
+.contact-icon {
+  font-size: 1.2rem;
+  color: #5F5142 !important; /* Fuerza el color café */
+  min-width: 20px;
+}
+
+/* Estilos para los enlaces */
+.contact-item a {
+  color: #5F5142;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: #9D8169;
+  text-decoration: underline;
+}
+
+/* Logo */
+.footer-logo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.footer-logo .logo {
+  height: 100px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* Copyright */
+.copyright {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid #E6DFC8;
+  font-size: 0.9rem;
+  font-family: 'Helios', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+    order: -1;
+  }
+  
+  .footer-contact {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-contact {
+    gap: 1rem;
+  }
+  
+  .footer-logo .logo {
+    height: 80px;
+  }
+}

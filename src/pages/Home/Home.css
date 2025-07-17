@@ -1,0 +1,265 @@
+.home-page {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  padding: 6rem 0;
+  text-align: center;
+  background-color: #FFF7EB;
+}
+
+.philosophy-card {
+  background-color: #E6DFC8;
+  padding: 3rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 
+    0 4px 12px rgba(95, 81, 66, 0.1),
+    0 8px 24px rgba(95, 81, 66, 0.15),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(95, 81, 66, 0.2);
+}
+
+.philosophy-section h2 {
+  font-family: var(--font-heading);
+  color: #5F5142;
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(95, 81, 66, 0.2);
+}
+
+.philosophy-text {
+  color: #5F5142;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-family: var(--font-subheading);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Scrollbar styling for philosophy text */
+.philosophy-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.philosophy-text::-webkit-scrollbar-track {
+  background: #E6DFC8;
+  border-radius: 10px;
+}
+
+.philosophy-text::-webkit-scrollbar-thumb {
+  background-color: #9D8169;
+  border-radius: 10px;
+}
+
+/* Classes Section - Carrusel */
+.classes-section {
+  padding: 5rem 0;
+  background-color: #FFF7EB;
+  text-align: center;
+}
+
+.classes-section h2 {
+  font-family: var(--font-heading);
+  color: #5F5142;
+  margin-bottom: 4rem;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(95, 81, 66, 0.2);
+}
+
+.classes-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.carousel-button {
+  background: #5F5142;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.carousel-button:hover {
+  background: var(--color-primary);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.class-card {
+   background-color: #E6DFC8; /* Color plano Kalon */
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(95, 81, 66, 0.15);
+  width: 320px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.class-icon {
+  margin-bottom: 2rem;
+}
+
+.class-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.class-card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.class-card p {
+  font-family: var(--font-subheading);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: black;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background-color: #5F5142;
+  transform: scale(1.2);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #5F5142;
+  color: white;
+  padding: 1.2rem 3rem;
+  border-radius: 30px;
+  font-family: var(--font-subheading);
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 2rem;
+  border: 2px solid #5F5142;
+  box-shadow: 
+    0 4px 8px rgba(95, 81, 66, 0.3),
+    0 6px 12px rgba(95, 81, 66, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  color: #5F5142;
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 12px rgba(95, 81, 66, 0.4),
+    0 8px 16px rgba(95, 81, 66, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .philosophy-section,
+  .classes-section {
+    padding: 4rem 0;
+  }
+  
+  .philosophy-card {
+    padding: 2rem;
+  }
+  
+  .philosophy-section h2,
+  .classes-section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .class-card {
+    width: 280px;
+    min-height: 350px;
+    padding: 1.5rem;
+  }
+  
+  .class-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .philosophy-section h2,
+  .classes-section h2 {
+    font-size: 2rem;
+  }
+  
+  .philosophy-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+    max-height: 200px;
+  }
+  
+  .class-card {
+    width: 250px;
+    min-height: 320px;
+  }
+  
+  .class-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .carousel-button {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}

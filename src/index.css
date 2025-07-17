@@ -1,0 +1,48 @@
+
+
+/* Variables CSS globales */
+:root {
+  /* Colores */
+  --color-primary: #5F5142;
+  --color-secondary: #9D8169;
+  --color-light: #E6DFC8;
+  --color-extra-light: #FFF7EB;
+  --color-dark: #000000;
+  --color-white: #FFFFFF;
+
+  /* Fuentes */
+  --font-heading: 'Gistesy', serif; /* Fuente que sí quieres */
+  --font-subheading: 'HeliosC', sans-serif; /* Fuente que sí quieres */
+  --font-body: 'Open Sans', sans-serif;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-primary);
+  background-color: var(--color-extra-light);
+  line-height: 1.6;
+}
+
+/* Estilos base para encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

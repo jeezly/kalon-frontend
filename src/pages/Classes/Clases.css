@@ -1,0 +1,124 @@
+/* Estilos base */
+.clases-wrapper {
+  min-height: 100vh;
+  background: #FFF7EB;
+  font-family: 'Poppins', sans-serif;
+}
+
+.clases-main {
+  padding: 100px 5% 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Hero section */
+.clases-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.clases-hero h1 {
+  font-size: 2.5rem;
+  color: #5F5142;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.clases-hero p {
+  font-size: 1.1rem;
+  color: #8A7B6B;
+}
+
+/* Layout principal */
+.clases-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.schedule-main {
+  flex: 1;
+  min-width: 0; /* Para evitar problemas de overflow */
+}
+
+/* Tips section */
+.clases-tips {
+  width: 280px;
+  position: sticky;
+  top: 120px;
+}
+
+.tips-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 24px rgba(95, 81, 66, 0.08);
+}
+
+.tips-card h3 {
+  color: #5F5142;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-bottom: 1px solid #F5E9D9;
+  padding-bottom: 10px;
+}
+
+.tips-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tips-card li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: #5F5142;
+}
+
+.tips-card li:before {
+  content: "•";
+  color: #D4A5A5;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .clases-layout {
+    flex-direction: column;
+  }
+  
+  .clases-tips {
+    width: 100%;
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clases-main {
+    padding: 80px 3% 30px;
+  }
+  
+  .clases-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .clases-hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clases-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tips-card {
+    padding: 20px;
+  }
+}

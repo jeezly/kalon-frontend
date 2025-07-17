@@ -1,0 +1,68 @@
+/* Estilos específicos para la página de Clientes */
+.clients-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+}
+
+.clients-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.clients-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.clients-table th, 
+.clients-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #E6DFC8;
+}
+
+.clients-table th {
+  font-weight: 600;
+  color: #9D8169;
+  background-color: #FFF7EB;
+}
+
+.clients-table tr:hover {
+  background-color: #FFF7EB;
+}
+
+/* Estilos específicos para botones de La Salle */
+.lasalle-active {
+  background-color: #D4EDDA;
+  color: #155724;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lasalle-inactive {
+  background-color: #F8D7DA;
+  color: #721C24;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.activate-button {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.activate-button:hover {
+  background-color: #C3E6CB;
+}

@@ -1,0 +1,158 @@
+.schedule-detail-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+}
+
+.schedule-info h2 {
+  font-family: 'Agustey', serif;
+  color: #5F5142;
+  margin-bottom: 1rem;
+}
+
+.schedule-info p {
+  margin: 0.5rem 0;
+  color: #5F5142;
+}
+
+.schedule-info strong {
+  color: #7A6A5A;
+}
+
+.alert {
+  padding: 0.75rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.reservations-list {
+  margin-top: 2rem;
+}
+
+.reservations-list h3 {
+  font-family: 'Agustey', serif;
+  color: #5F5142;
+  margin-bottom: 1rem;
+}
+
+.export-buttons {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #E6DFC8;
+  color: #5F5142;
+}
+
+th {
+  background-color: #f4f1ea;
+  color: #7A6A5A;
+}
+
+.status {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status.active {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.status.inactive {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.status.pending {
+  background-color: #FFF3CD;
+  color: #856404;
+}
+
+.actions-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.confirm-button {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.confirm-button:hover {
+  background-color: #C3E6CB;
+}
+
+.cancel-button {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.cancel-button:hover {
+  background-color: #F5C6CB;
+}
+
+.lasalle-active {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.lasalle-inactive {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+@media (max-width: 768px) {
+  .schedule-detail-container {
+    padding: 1rem;
+  }
+
+  th, td {
+    padding: 0.6rem;
+  }
+
+  .export-buttons {
+    flex-direction: column;
+  }
+
+  .actions-group {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,65 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@500;700&family=Open+Sans:wght@400;700&display=swap');
+
+/* Variables CSS globales */
+:root {
+  /* Fuentes */
+  --font-heading: 'Gistesy', serif; /* Fuente que sí quieres */
+  --font-subheading: 'HeliosC', sans-serif; /* Fuente que sí quieres */
+  --font-body: 'Open Sans', sans-serif;
+
+  /* Colores */
+  --color-primary: #5F5143;
+  --color-secondary: #9D8169;
+  --color-light: #E6DFC8;
+  --color-extra-light: #FFF7EB;
+  --color-dark: #000000;
+  --color-white: #FFFFFF;
+
+  /* Fuentes */
+  --font-heading: 'Playfair Display', serif;
+  --font-subheading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-primary);
+  background-color: var(--color-extra-light);
+  line-height: 1.6;
+}
+
+/* Estilos base para encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+/* Estilos para enlaces */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}

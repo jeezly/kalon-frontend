@@ -1,0 +1,194 @@
+/* src/pages/admin/PendingPayments.css */
+.pending-payments-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-family: 'Agustey', serif;
+  font-size: 2rem;
+  color: #5F5142;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  color: #9D8169;
+}
+
+.payments-table {
+  overflow-x: auto;
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+  padding: 1.5rem;
+}
+
+.payments-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payments-table th {
+  font-family: 'Helios', sans-serif;
+  font-weight: 600;
+  color: #9D8169;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid #E6DFC8;
+}
+
+.payments-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #E6DFC8;
+  font-family: 'Helios', sans-serif;
+  color: #5F5142;
+}
+
+.days-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.days-badge.normal {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.days-badge.warning {
+  background-color: #FFF3CD;
+  color: #856404;
+}
+
+.days-badge.urgent {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.error-message {
+  background-color: #F8D7DA;
+  color: #721C24;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-message button {
+  background: none;
+  border: none;
+  color: #721C24;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.success-message {
+  background-color: #D4EDDA;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.success-message button {
+  background: none;
+  border: none;
+  color: #155724;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: #7A6A5A;
+  font-style: italic;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.actions-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-button {
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  font-family: 'Helios', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+}
+
+.confirm-button {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.confirm-button:hover {
+  background-color: #C3E6CB;
+}
+
+.cancel-button {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.cancel-button:hover {
+  background-color: #F5C6CB;
+}
+
+@media (max-width: 768px) {
+  .pending-payments-container {
+    padding: 1rem;
+  }
+  
+  .payments-table {
+    padding: 1rem;
+  }
+  
+  .payments-table th, 
+  .payments-table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .actions-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

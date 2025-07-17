@@ -1,0 +1,423 @@
+/* ClassSchedule.css */
+
+:root {
+  --primary-color: #6D5D4B;
+  --secondary-color: #D8C4B6;
+  --accent-color: #F5EFE6;
+  --light-color: #F8F5F1;
+  --dark-color: #4A4036;
+  --success-color: #8FB9A8;
+  --error-color: #F38181;
+}
+
+.class-schedule-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--light-color);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(109, 93, 75, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.main-title {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: var(--dark-color);
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 0;
+}
+
+.class-type-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.class-type-card {
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(109, 93, 75, 0.08);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.class-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #D8C4B6, #6D5D4B);
+}
+
+.class-type-title {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.class-type-icon {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.nav-button {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(109, 93, 75, 0.1);
+}
+
+.nav-button:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  transform: scale(1.05);
+}
+
+.day-selector-container {
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.day-selector {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-width: fit-content;
+}
+
+.day-button {
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  min-width: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(109, 93, 75, 0.05);
+}
+
+.day-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(109, 93, 75, 0.15);
+}
+
+.day-button:hover:not(.active) {
+  background-color: var(--accent-color);
+}
+
+.day-abbr {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.day-full {
+  font-size: 0.7rem;
+  opacity: 0.8;
+  margin-top: 0.2rem;
+}
+
+.calendar-container {
+  background-color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(109, 93, 75, 0.08);
+}
+
+.time-sections-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.time-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.time-header .sun-icon,
+.time-header .moon-icon {
+  font-size: 1.2rem;
+}
+
+.time-header .time-label {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0.8rem;
+}
+
+.time-slot {
+  display: contents;
+}
+
+.time-slot .time-label {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.class-slot {
+  grid-column: 2;
+}
+
+.class-button {
+  width: 100%;
+  background-color: white;
+  color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.class-button.available:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(109, 93, 75, 0.1);
+}
+
+.class-button.full {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #f9f9f9;
+}
+
+.class-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.coach-name {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--primary-color);
+}
+
+.class-availability {
+  font-size: 0.85rem;
+  color: var(--dark-color);
+  opacity: 0.8;
+}
+
+.reserve-badge {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.no-class {
+  padding: 1rem;
+  color: #B8B2A7;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.loading, .error-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error-message {
+  color: var(--error-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .class-schedule-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .class-type-card {
+    padding: 1rem;
+  }
+  
+  .class-type-title {
+    font-size: 1.5rem;
+  }
+  
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .day-button {
+    padding: 0.6rem;
+    min-width: 50px;
+  }
+  
+  .day-abbr {
+    font-size: 0.9rem;
+  }
+  
+  .day-full {
+    font-size: 0.6rem;
+  }
+  
+  .calendar-container {
+    padding: 1rem;
+  }
+  
+  .schedule-grid {
+    grid-template-columns: 70px 1fr;
+  }
+  
+  .class-button {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .class-schedule-container {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+  
+  .main-title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .class-type-selector {
+    margin-bottom: 1.5rem;
+  }
+  
+  .class-type-title {
+    font-size: 1.3rem;
+  }
+  
+  .class-type-icon {
+    font-size: 1.5rem;
+  }
+  
+  .day-selector {
+    gap: 0.3rem;
+  }
+  
+  .day-button {
+    padding: 0.5rem 0.3rem;
+    min-width: 40px;
+  }
+  
+  .day-abbr {
+    font-size: 0.8rem;
+  }
+  
+  .day-full {
+    display: none;
+  }
+  
+  .schedule-grid {
+    grid-template-columns: 60px 1fr;
+    gap: 0.5rem;
+  }
+  
+  .time-slot .time-label {
+    font-size: 0.85rem;
+    padding-right: 0.5rem;
+  }
+  
+  .class-button {
+    padding: 0.7rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  
+  .reserve-badge {
+    align-self: flex-end;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.7rem;
+  }
+  
+  .time-header .time-label {
+    font-size: 1.1rem;
+  }
+}

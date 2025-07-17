@@ -1,0 +1,81 @@
+/* Estilos específicos para la página de Paquetes */
+.packages-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+}
+
+.packages-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.packages-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.packages-table th {
+  font-weight: 600;
+  color: #9D8169;
+  padding: 1rem;
+  border-bottom: 2px solid #E6DFC8;
+}
+
+.packages-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #E6DFC8;
+  color: #5F5142;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status.active {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.status.inactive {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.packages-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-package-button {
+  background-color: #E6DFC8;
+  color: #5F5142;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.edit-package-button:hover {
+  background-color: #D9D0B4;
+}
+
+.delete-package-button {
+  background-color: #F8D7DA;
+  color: #721C24;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.delete-package-button:hover {
+  background-color: #F5C6CB;
+}

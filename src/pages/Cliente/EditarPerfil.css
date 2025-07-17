@@ -1,0 +1,353 @@
+/* EditarPerfil.css */
+.editar-perfil {
+  background-color: #FFF7EB;
+  min-height: 100vh;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+.cliente-main {
+  padding-top: 100px; /* Aumentado para dar espacio al header */
+  padding-bottom: 2rem;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(95, 81, 66, 0.1);
+}
+
+.profile-container h1 {
+  font-family: 'Agustey', serif;
+  color: #5F5142;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.profile-container h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #9D8169;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Sección de avatar */
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-preview {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #F5F0E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid #E6DFC8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.default-avatar {
+  font-size: 3.5rem;
+  color: #9D8169;
+}
+
+.avatar-upload {
+  position: relative;
+  display: inline-block;
+}
+
+.upload-button {
+  background-color: #5F5142;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-family: 'Helios', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(95, 81, 66, 0.2);
+}
+
+.upload-button:hover {
+  background-color: #7A6A5A;
+  transform: translateY(-2px);
+}
+
+.upload-button:active {
+  transform: translateY(0);
+}
+
+.avatar-upload input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #5F5142;
+  font-family: 'Helios', sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #E6DFC8;
+  border-radius: 8px;
+  font-family: 'Helios', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: #FFFCF8;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #9D8169;
+  box-shadow: 0 0 0 3px rgba(157, 129, 105, 0.2);
+}
+
+.form-group input::placeholder {
+  color: #B8A99A;
+  opacity: 0.7;
+}
+
+/* Secciones */
+.form-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #E6DFC8;
+}
+
+.form-section h2 {
+  font-family: 'Helios', sans-serif;
+  color: #5F5142;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.form-section h2:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #9D8169;
+}
+
+/* Botones */
+.save-button {
+  background-color: #5F5142;
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 8px;
+  font-family: 'Helios', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: all 0.3s;
+  margin-top: 1.5rem;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(95, 81, 66, 0.2);
+}
+
+.save-button:hover {
+  background-color: #7A6A5A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(95, 81, 66, 0.25);
+}
+
+.save-button:active {
+  transform: translateY(0);
+}
+
+/* Alertas */
+.alert {
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-family: 'Helios', sans-serif;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border: 1px solid transparent;
+}
+
+.alert-success {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  border-color: #C8E6C9;
+}
+
+.alert-error {
+  background-color: #FFEBEE;
+  color: #C62828;
+  border-color: #FFCDD2;
+}
+
+/* Loading */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #E6DFC8;
+  border-top: 6px solid #9D8169;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .profile-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cliente-main {
+    padding-top: 90px; /* Ajuste para móviles */
+  }
+  
+  .profile-container {
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+  }
+  
+  .avatar-preview {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .form-group input {
+    padding: 0.9rem;
+  }
+  
+  .save-button {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cliente-main {
+    padding-top: 100px; /* Más espacio para el header en móviles */
+  }
+  
+  .profile-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .profile-container h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1.8rem;
+    padding-top: 0.5rem; /* Espacio adicional */
+  }
+  
+  .form-section h2 {
+    font-size: 1.2rem;
+  }
+  
+  .upload-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .avatar-section {
+    margin-bottom: 1rem;
+  }
+  
+  .profile-form {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .cliente-main {
+    padding-top: 100px;
+  }
+  
+  .profile-container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .profile-container {
+    padding: 1.2rem;
+  }
+}

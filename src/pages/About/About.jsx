@@ -1,0 +1,348 @@
+import { useState, useEffect } from 'react';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import api from '../../services/api';
+import './About.css';
+
+const About = () => {
+  const [activeTab, setActiveTab] = useState('mision');
+  const [currentSpecialty, setCurrentSpecialty] = useState('Reformer');
+  const [currentCoachIndex, setCurrentCoachIndex] = useState(0);
+  const [currentValueIndex, setCurrentValueIndex] = useState(0);
+  const [expandedImage, setExpandedImage] = useState(null);
+  const [coaches, setCoaches] = useState({
+    Reformer: [],
+    Barre: [],
+    Yoga: []
+  });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const valores = [
+    "Crecimiento",
+    "Armonía",
+    "Equilibrio",
+    "Disciplina",
+    "Comunidad",
+    "Estilo de vida"
+  ];
+
+  useEffect(() => {
+    const fetchCoaches = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const [reformerResponse, barreResponse, yogaResponse] = await Promise.all([
+          api.getCoachesBySpecialty('Reformer'),
+          api.getCoachesBySpecialty('Barre'),
+          api.getCoachesBySpecialty('Yoga')
+        ]);
+
+        setCoaches({
+          Reformer: reformerResponse.data.data || [],
+          Barre: barreResponse.data.data || [],
+          Yoga: yogaResponse.data.data || []
+        });
+        
+      } catch (err) {
+        console.error('Error fetching coaches:', err);
+        setError('Error al cargar los coaches. Por favor intenta más tarde.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCoaches();
+  }, []);
+
+  const currentCoaches = coaches[currentSpecialty] || [];
+
+  const nextCoach = () => {
+    if (currentCoaches.length === 0) return;
+    setCurrentCoachIndex((prevIndex) => 
+      prevIndex === currentCoaches.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevCoach = () => {
+    if (currentCoaches.length === 0) return;
+    setCurrentCoachIndex((prevIndex) => 
+      prevIndex === 0 ? currentCoaches.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextValue = () => {
+    setCurrentValueIndex((prevIndex) => 
+      prevIndex === valores.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevValue = () => {
+    setCurrentValueIndex((prevIndex) => 
+      prevIndex === 0 ? valores.length - 1 : prevIndex - 1
+    );
+  };
+
+  const changeSpecialty = (specialty) => {
+    setCurrentSpecialty(specialty);
+    setCurrentCoachIndex(0);
+  };
+
+  const handleImageClick = (imageIndex) => {
+    setExpandedImage(expandedImage === imageIndex ? null : imageIndex);
+  };
+
+  return (
+    <div className="about-page">
+      {/* Sección Quiénes Somos */}
+      <section className="quienes-somos-section">
+        <div className="quienes-somos-container">
+          <div className="quienes-somos-image">
+            <img src="/src/assets/images/quienessomos.png" alt="Estudio Kalon" />
+          </div>
+          <div className="quienes-somos-content">
+            <h1>¿QUIÉNES SOMOS?</h1>
+            <p>
+              Kalon Studio nace del deseo de acompañar a cada persona a reconectar con
+              su cuerpo, mente y espíritu, a través del movimiento consciente.
+              En un espacio libre de juicios, buscamos que cada clase sea una experiencia
+              de belleza interior, armonía y bienestar.
+            </p>
+            <div className="offerings">
+              <h3>Ofrecemos:</h3>
+              <ul>
+                <li>Clases de Yoga, Barre y Pilates</li>
+                <li>Ambiente estético y armonioso</li>
+                <li>Atención personalizada y comunidad basada en el bienestar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sección Nuestra Esencia */}
+      <section className="nuestra-esencia-section">
+        <div className="nuestra-esencia-container">
+          <div className="polaroid-left">
+            <img src="/src/assets/images/polaroidUno.png" alt="Filosofía Kalon" />
+          </div>
+          <div className="nuestra-esencia-content">
+            <div className="esencia-scroll">
+              <h2>NUESTRA ESENCIA</h2>
+              <p>
+                Kalon nace de una palabra griega que significa belleza más allá de lo superficial. Para nosotras, no se trata solo
+                de cómo te ves, sino de cómo te sientes y te conectas contigo misma. Creemos en una estética que refleja
+                equilibrio, bienestar y plenitud interior.
+                <br /><br />
+                Somos un espacio creado para acompañarte a reconectar con tu cuerpo, mente y espíritu a través del movimiento
+                consciente. Aquí, cada clase es una oportunidad para fluir, respirar y crecer. En Kalon, el bienestar no es una
+                meta: es un estilo de vida que se construye desde adentro hacia afuera.
+                <br /><br />
+                Más que un estudio, somos una comunidad que valora la armonía, la elegancia y el cuidado personal, en un
+                ambiente libre de juicios, hecho para ti.
+              </p>
+            </div>
+          </div>
+          <div className="polaroid-right">
+            <img src="/src/assets/images/polaroidDos.png" alt="Filosofía Kalon" />
+          </div>
+        </div>
+      </section>
+
+      {/* Misión, Visión y Valores */}
+      <section className="mvv-section">
+        <div className="container">
+          <div className="tabs">
+            <button 
+              className={`tab ${activeTab === 'mision' ? 'active' : ''}`}
+              onClick={() => setActiveTab('mision')}
+            >
+              Misión
+            </button>
+            <button 
+              className={`tab ${activeTab === 'vision' ? 'active' : ''}`}
+              onClick={() => setActiveTab('vision')}
+            >
+              Visión
+            </button>
+            <button 
+              className={`tab ${activeTab === 'valores' ? 'active' : ''}`}
+              onClick={() => setActiveTab('valores')}
+            >
+              Valores
+            </button>
+          </div>
+
+          <div className="tab-content">
+            {activeTab === 'mision' && (
+              <div className="mision-box">
+                <img src="/src/assets/images/mision.png" alt="Icono Misión" className="mvv-icon" />
+                <p>
+                  Guiar a cada persona hacia un estilo de vida saludable, integrando cuerpo,
+                  mente y espíritu a través del movimiento consciente.
+                </p>
+              </div>
+            )}
+
+            {activeTab === 'vision' && (
+              <div className="vision-box">
+                <img src="/src/assets/images/vision.png" alt="Icono Visión" className="mvv-icon" />
+                <p>
+                  Ser un espacio inclusivo y sin prejuicios, donde el bienestar interior
+                  florezca en un ambiente armonioso, estético y lleno de intención.
+                </p>
+              </div>
+            )}
+
+            {activeTab === 'valores' && (
+              <div className="valores-box">
+                <img src="/src/assets/images/values.png" alt="Icono Valores" className="mvv-icon" />
+                <div className="valores-carousel">
+                  <button className="value-nav prev" onClick={prevValue}>&lt;</button>
+                  <div className="valor-text">
+                    {valores[currentValueIndex]}
+                  </div>
+                  <button className="value-nav next" onClick={nextValue}>&gt;</button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Nuestro Espacio */}
+      <section className="nuestro-espacio-section">
+        <div className="container">
+          <h2>NUESTRO ESPACIO</h2>
+          <div className="espacio-grid">
+            <div className="espacio-principal" onClick={() => handleImageClick(0)}>
+              <img src="/src/assets/images/kalonuno.png" alt="Espacio Kalon" />
+            </div>
+            <div className="espacio-tres-fotos">
+              <div className="espacio-pequeno" onClick={() => handleImageClick(1)}>
+                <img src="/src/assets/images/kalondos.png" alt="Espacio Kalon" />
+              </div>
+              <div className="espacio-pequeno" onClick={() => handleImageClick(2)}>
+                <img src="/src/assets/images/kalontres.png" alt="Espacio Kalon" />
+              </div>
+              <div className="espacio-pequeno" onClick={() => handleImageClick(3)}>
+                <img src="/src/assets/images/kaloncuatro.png" alt="Espacio Kalon" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nuestros Coaches */}
+      <section className="coaches-section">
+        <div className="container">
+          <h2>NUESTROS COACHES</h2>
+          <div className="specialty-selector">
+            <button 
+              className={`specialty-btn ${currentSpecialty === 'Reformer' ? 'active' : ''}`}
+              onClick={() => changeSpecialty('Reformer')}
+            >
+              REFORMER
+            </button>
+            <button 
+              className={`specialty-btn ${currentSpecialty === 'Barre' ? 'active' : ''}`}
+              onClick={() => changeSpecialty('Barre')}
+            >
+              BARRE
+            </button>
+            <button 
+              className={`specialty-btn ${currentSpecialty === 'Yoga' ? 'active' : ''}`}
+              onClick={() => changeSpecialty('Yoga')}
+            >
+              YOGA
+            </button>
+          </div>
+          
+          {error ? (
+            <div className="error-message">{error}</div>
+          ) : loading ? (
+            <div className="loading-coaches">Cargando coaches...</div>
+          ) : currentCoaches.length > 0 ? (
+            <>
+              <div className="coach-carousel">
+                <button className="nav-arrow" onClick={prevCoach}>&lt;</button>
+                
+                <div className="coach-card">
+                  <div className="coach-image">
+                    <img 
+                      src={currentCoaches[currentCoachIndex].foto} 
+                      alt={currentCoaches[currentCoachIndex].nombre} 
+                      onError={(e) => {
+                        e.target.src = '/server/assets/images/coach-default.png';
+                        e.target.onerror = null;
+                      }}
+                    />
+                  </div>
+                  <h3>{currentCoaches[currentCoachIndex].nombre}</h3>
+                  <p>{currentSpecialty}</p>
+                  <div className="coach-contact">
+                    <a href={`tel:${currentCoaches[currentCoachIndex].telefono}`}>
+                      {currentCoaches[currentCoachIndex].telefono}
+                    </a>
+                  </div>
+                </div>
+                
+                <button className="nav-arrow" onClick={nextCoach}>&gt;</button>
+              </div>
+              
+              <div className="coach-indicator">
+                {currentCoachIndex + 1} / {currentCoaches.length}
+              </div>
+            </>
+          ) : (
+            <div className="no-coaches-message">
+              No hay coaches disponibles para esta especialidad.
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Ubicación */}
+      <section className="ubicacion-section">
+        <div className="container">
+          <h2>NUESTRA UBICACIÓN</h2>
+          <div className="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.23456789!2d-101.67890123456789!3d20.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b0f123456789a%3A0x123456789abcdef!2sNubes%20201%2C%20Jardines%20del%20Moral%2C%2037160%20Le%C3%B3n%2C%20Gto.!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx" 
+              width="100%" 
+              height="450" 
+              style={{border:0}} 
+              allowFullScreen="" 
+              loading="lazy"
+              title="Ubicación Kalon Studio"
+              className="map-frame"
+            ></iframe>
+          </div>
+          <div className="direccion">
+            <FaMapMarkerAlt className="map-icon" />
+            Nubes 201, Jardines del Moral,<br />
+            37160 León, Gto.
+          </div>
+        </div>
+      </section>
+
+      {/* Modal para imagen expandida */}
+      {expandedImage !== null && (
+        <div className="image-modal" onClick={() => setExpandedImage(null)}>
+          <img 
+            src={
+              expandedImage === 0 ? "/src/assets/images/kalonuno.png" :
+              expandedImage === 1 ? "/src/assets/images/kalondos.png" :
+              expandedImage === 2 ? "/src/assets/images/kalontres.png" :
+              "/src/assets/images/kaloncuatro.png"
+            } 
+            alt="Espacio Kalon Studio" 
+          />
+          <button className="close-modal">&times;</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default About;

@@ -1,0 +1,704 @@
+.about-page {
+  padding-top: 80px;
+  background-color: #FFF7EB;
+  font-family: 'Helios', sans-serif;
+  color: #5F5142;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Sección Quiénes Somos */
+.quienes-somos-section {
+  padding: 5rem 0;
+}
+
+.quienes-somos-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+.quienes-somos-image {
+  flex: 1;
+  min-height: 700px;
+  box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.quienes-somos-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.quienes-somos-image:hover img {
+  transform: scale(1.03);
+}
+
+.quienes-somos-content {
+  flex: 1;
+  background-color: #E6DFC8;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quienes-somos-content h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #5F5142;
+}
+
+.quienes-somos-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.offerings h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #9D8169;
+}
+
+.offerings ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.offerings li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.offerings li:before {
+  content: "•";
+  color: #9D8169;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -3px;
+}
+
+/* Sección Nuestra Esencia */
+.nuestra-esencia-section {
+  padding: 5rem 0;
+  background-color: #FFF7EB;
+}
+
+.nuestra-esencia-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.polaroid-left, .polaroid-right {
+  flex: 0 0 25%;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.3);
+  transform: rotate(-5deg);
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.polaroid-right {
+  transform: rotate(5deg);
+}
+
+.polaroid-left:hover, .polaroid-right:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 12px 12px 30px rgba(95, 81, 66, 0.4);
+}
+
+.polaroid-left img, .polaroid-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nuestra-esencia-content {
+  flex: 1;
+  background-color: #9D8169;
+  color: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(95, 81, 66, 0.3);
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.esencia-scroll {
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+/* Custom scrollbar */
+.esencia-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.esencia-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.esencia-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.esencia-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.nuestra-esencia-content h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.nuestra-esencia-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Sección Misión, Visión y Valores */
+.mvv-section {
+  padding: 5rem 0;
+  background-color: #FFF7EB;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.tab {
+  padding: 0.8rem 2rem;
+  font-family: 'Helios', sans-serif;
+  font-size: 1.3rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #9D8169;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: #5F5142;
+  transform: scale(1.05);
+}
+
+.tab.active {
+  color: #5F5142;
+  border-bottom: 2px solid #5F5142;
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+.tab-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mision-box, .vision-box, .valores-box {
+  background-color: #9D8169;
+  color: #FFF7EB;
+  padding: 3rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(95, 81, 66, 0.3);
+}
+
+.mision-box:hover, .vision-box:hover, .valores-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(95, 81, 66, 0.4);
+}
+
+.mvv-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.valores-carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.valor-text {
+  font-size: 1.3rem;
+  font-weight: 500;
+  min-width: 200px;
+  text-align: center;
+}
+
+.value-nav {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #FFF7EB;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0 1rem;
+}
+
+.value-nav:hover {
+  color: #E6DFC8;
+  transform: scale(1.2);
+}
+
+/* Sección Nuestro Espacio */
+.nuestro-espacio-section {
+  padding: 5rem 0;
+  background-color: #FFF7EB;
+}
+
+.nuestro-espacio-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #5F5142;
+}
+
+.espacio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.espacio-tres-fotos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.espacio-principal, .espacio-pequeno {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.espacio-principal {
+  height: 400px;
+}
+
+.espacio-pequeno {
+  height: 200px;
+}
+
+.espacio-principal img, 
+.espacio-pequeno img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.espacio-principal:hover, 
+.espacio-pequeno:hover {
+  box-shadow: 12px 12px 30px rgba(95, 81, 66, 0.4);
+}
+
+.espacio-principal:hover img,
+.espacio-pequeno:hover img {
+  transform: scale(1.05);
+}
+
+/* Sección Coaches */
+.coaches-section {
+  padding: 5rem 0;
+  background-color: #FFF7EB;
+}
+
+.coaches-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #5F5142;
+}
+
+.specialty-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.specialty-btn {
+  padding: 0.5rem 1.5rem;
+  background: none;
+  border: 2px solid #9D8169;
+  color: #9D8169;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.2);
+}
+
+.specialty-btn:hover {
+  background-color: #9D8169;
+  color: #FFF7EB;
+  box-shadow: 0 8px 16px rgba(95, 81, 66, 0.3);
+}
+
+.specialty-btn.active {
+  background-color: #9D8169;
+  color: #FFF7EB;
+  box-shadow: 0 8px 16px rgba(95, 81, 66, 0.3);
+}
+
+.coach-carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #9D8169;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0 1rem;
+}
+
+.nav-arrow:hover {
+  color: #5F5142;
+  transform: scale(1.2);
+}
+
+.coach-card {
+  text-align: center;
+  flex: 1;
+}
+
+.coach-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #9D8169;
+  position: relative;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(95, 81, 66, 0.3);
+}
+
+.coach-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coach-contact {
+  margin-top: 1rem;
+}
+
+.coach-contact a {
+  color: #9D8169;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.coach-contact a:hover {
+  color: #5F5142;
+  text-decoration: underline;
+}
+
+.coach-card h3 {
+  font-size: 1.3rem;
+  margin: 1rem 0 0.5rem;
+  color: #5F5142;
+}
+
+.coach-card p {
+  font-size: 1rem;
+  color: #9D8169;
+  font-style: italic;
+}
+
+.coach-indicator {
+  text-align: center;
+  color: #9D8169;
+  font-size: 0.9rem;
+}
+
+/* Sección Ubicación */
+.ubicacion-section {
+  padding: 5rem 0;
+  background-color: #FFF7EB;
+  position: relative;
+}
+
+.ubicacion-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #5F5142;
+}
+
+.map-container {
+  margin: 0 auto;
+  max-width: 800px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(95, 81, 66, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.map-frame {
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.map-container:hover {
+  box-shadow: 0 15px 35px rgba(95, 81, 66, 0.4);
+}
+
+.direccion {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #5F5142;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.map-icon {
+  color: #9D8169;
+  font-size: 1.3rem;
+}
+
+/* Modal para imágenes expandidas */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-modal {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Media Queries para responsividad - VISTA CELULAR (VERTICAL) */
+@media (max-width: 768px) {
+  /* Quiénes Somos - Cambia a vertical */
+  .quienes-somos-container {
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+  
+  .quienes-somos-image {
+    min-height: 300px;
+    width: 100%;
+  }
+  
+  .quienes-somos-content {
+    padding: 2rem;
+  }
+
+  /* Nuestra Esencia - Cambia a vertical */
+  .nuestra-esencia-container {
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+  
+  .polaroid-left, .polaroid-right {
+    width: 80%;
+    margin: 0 auto;
+    height: 250px;
+    flex: 0 0 auto;
+  }
+  
+  .nuestra-esencia-content {
+    min-height: auto;
+    padding: 2rem;
+    order: 3;
+  }
+
+  /* Misión/Visión/Valores - Tabs horizontales con scroll */
+  .tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+  }
+
+  /* Nuestro Espacio - Cambia a vertical */
+  .espacio-tres-fotos {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .espacio-principal {
+    height: 300px;
+    order: 1;
+  }
+
+  .espacio-pequeno {
+    height: 150px;
+  }
+
+  /* Coaches - Ajusta tamaño de imagen */
+  .coach-image {
+    width: 180px;
+    height: 180px;
+  }
+  
+  /* Ajustes generales de tamaño de texto */
+  .quienes-somos-content h1,
+  .nuestra-esencia-content h2,
+  .coaches-section h2,
+  .ubicacion-section h2,
+  .nuestro-espacio-section h2 {
+    font-size: 2rem;
+  }
+  
+  .quienes-somos-content p,
+  .nuestra-esencia-content p,
+  .mision-box p,
+  .vision-box p {
+    font-size: 1rem;
+  }
+}
+
+/* Media Queries para móviles pequeños */
+@media (max-width: 480px) {
+  /* Ajustes adicionales para móviles pequeños */
+  .quienes-somos-content h1,
+  .nuestra-esencia-content h2,
+  .coaches-section h2,
+  .ubicacion-section h2,
+  .nuestro-espacio-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .polaroid-left, .polaroid-right {
+    width: 90%;
+    height: 200px;
+  }
+  
+  .coach-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .specialty-selector {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .specialty-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+}

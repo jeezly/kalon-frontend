@@ -1,0 +1,648 @@
+/* Estilos base */
+.horario-cliente-container {
+   max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #5F5142;
+  background-color: #FFF7EB;
+  /* Añadido para evitar solapamiento con header */
+  padding-top: 100px; /* Espacio para el header */
+}
+
+.horario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  /* Añadido para móviles */
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.horario-header h2 {
+   font-size: 2rem;
+  color: #5F5142;
+  margin: 0;
+  font-weight: 600;
+  /* Asegurar que el título sea visible */
+  width: 100%;
+}
+
+.creditos-disponibles {
+  background-color: #E6DFC8;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(95, 81, 66, 0.1);
+}
+
+.creditos-count {
+  background-color: #9D8169;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Filtros */
+.filtros-container {
+  margin-bottom: 1.5rem;
+}
+
+.filtro-clases {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtro-btn {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #D9D0B4;
+  background-color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filtro-btn:hover {
+  background-color: #F5E9D9;
+}
+
+.filtro-btn.active {
+  background-color: #5F5142;
+  color: white;
+  border-color: #5F5142;
+}
+
+.paquetes-count {
+  background-color: #9D8169;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+/* Navegación de semana */
+.semana-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  background-color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(95, 81, 66, 0.1);
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #9D8169;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-btn:disabled {
+  color: #D9D0B4;
+  cursor: not-allowed;
+}
+
+.nav-btn:hover:not(:disabled) {
+  color: #5F5142;
+}
+
+.semana-actual {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #5F5142;
+}
+
+/* Días de la semana */
+.dias-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.dia-card {
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  background-color: white;
+  border: 1px solid #E6DFC8;
+  box-shadow: 0 2px 4px rgba(95, 81, 66, 0.05);
+}
+
+.dia-card:hover:not(.pasado) {
+  background-color: #F5E9D9;
+}
+
+.dia-card.seleccionado {
+  background-color: #5F5142;
+  color: white;
+}
+
+.dia-card.hoy {
+  border: 2px solid #9D8169;
+}
+
+.dia-card.pasado {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+}
+
+.dia-nombre {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.dia-fecha {
+  font-size: 1.1rem;
+}
+
+.hoy-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #9D8169;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.pasado-badge {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #D4A5A5;
+  color: white;
+  border-radius: 10px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Selector mañana/tarde */
+.seccion-dia-selector {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  gap: 1rem;
+}
+
+.seccion-btn {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #E6DFC8;
+  color: #5F5142;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seccion-btn.active {
+  background-color: #5F5142;
+  color: white;
+}
+
+.seccion-btn:hover {
+  background-color: #D9D0B4;
+}
+
+.icono-seccion {
+  font-size: 1rem;
+}
+
+/* Lista de horarios */
+.horarios-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.horario-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.horario-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(95, 81, 66, 0.15);
+}
+
+.horario-card.mañana-theme {
+  border-left: 4px solid #F9D56E;
+}
+
+.horario-card.mañana-theme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(249, 213, 110, 0.1);
+  border-radius: 0 0 0 100%;
+}
+
+.horario-card.tarde-theme {
+  border-left: 4px solid #6B7AA1;
+}
+
+.horario-card.tarde-theme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(107, 122, 161, 0.1);
+  border-radius: 0 0 0 100%;
+}
+
+.horario-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.horario-hora {
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 100px;
+  color: #5F5142;
+}
+
+.horario-detalle h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #5F5142;
+}
+
+.coach-name {
+  color: #8A7B6B;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.horario-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.cupo.lleno {
+  color: #D4A5A5;
+}
+
+.paquetes-disponibles {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.paquete-tag {
+  background-color: #E6DFC8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+
+/* Botones */
+.horario-acciones {
+  min-width: 120px;
+  text-align: right;
+}
+
+.btn-reservar, .btn-cancelar {
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.btn-reservar {
+  background-color: #9D8169;
+  color: white;
+}
+
+.btn-reservar:hover:not(.disabled) {
+  background-color: #7A6A5A;
+}
+
+.btn-reservar.disabled {
+  background-color: #D9D0B4;
+  cursor: not-allowed;
+}
+
+.btn-cancelar {
+  background-color: #F5E9D9;
+  color: #D4A5A5;
+  border: 1px solid #D4A5A5;
+}
+
+.btn-cancelar:hover {
+  background-color: #F0E0CC;
+}
+
+/* Clases específicas */
+.horario-card.pilates-reformer {
+  border-left: 4px solid #9D8169;
+}
+
+.horario-card.barre {
+  border-left: 4px solid #D4A5A5;
+}
+
+.horario-card.yoga {
+  border-left: 4px solid #B8C4B8;
+}
+
+/* Mensajes */
+.error-message {
+  background-color: #FADBD8;
+  color: #D4A5A5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.error-message button {
+  background: none;
+  border: none;
+  color: #D4A5A5;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #F5E9D9;
+  border-top: 4px solid #9D8169;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sin-horarios {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(95, 81, 66, 0.1);
+}
+
+.btn-ver-todas {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  background-color: #9D8169;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-ver-todas:hover {
+  background-color: #7A6A5A;
+}
+
+@media (max-width: 1024px) {
+  .horario-cliente-container {
+    padding-top: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .horario-cliente-container {
+    padding: 1.5rem;
+    padding-top: 80px; /* Menos espacio en móviles */
+  }
+  
+  .horario-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .horario-header h2 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .horario-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .horario-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .horario-acciones {
+    text-align: left;
+  }
+  
+  .dias-semana {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .horario-cliente-container {
+    padding-top: 70px; /* Aún menos espacio para móviles pequeños */
+  }
+  
+  .dias-semana {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .filtro-clases {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filtro-btn {
+    width: 100%;
+  }
+  
+  .semana-navegacion {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .horario-header h2 {
+    font-size: 1.3rem;
+    padding-top: 0.5rem;
+  }
+}
+.reglas-reserva {
+  background-color: #f8f4e8;
+  border-left: 4px solid #9D8169;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.reglas-reserva h3 {
+  color: #5F5142;
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.reglas-reserva ul {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.reglas-reserva li {
+  margin-bottom: 0.5rem;
+}
+
+.reglas-reserva strong {
+  color: #7A6A5A;
+}
+
+.nota-importante {
+  font-style: italic;
+  color: #8A7B6B;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+/* Modal de éxito */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(95, 81, 66, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.success-modal h3 {
+  color: #5F5142;
+  margin-top: 0;
+}
+
+.btn-cerrar-modal {
+  background-color: #9D8169;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+}
+
+.btn-cerrar-modal:hover {
+  background-color: #7A6A5A;
+}

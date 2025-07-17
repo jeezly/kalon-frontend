@@ -1,0 +1,102 @@
+.hero-section {
+  background: 
+    linear-gradient(rgba(95, 81, 66, 0.3), 
+    rgba(95, 81, 66, 0.7)),
+    url('/src/assets/images/kalonhome.png') center/cover no-repeat;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFF7EB;
+  position: relative;
+}
+
+.hero-content {
+  z-index: 2;
+  padding-top: 80px;
+}
+
+.hero-logo {
+  height: 250px;
+  width: auto;
+  margin-bottom: 2rem;
+  animation: fadeIn 1.5s ease-out;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.hero-subtitle {
+  font-family: 'Helios', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+  animation: fadeIn 1.5s ease-out 0.3s both;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.reserva-button {
+  display: inline-block;
+  background-color: #9D8169;
+  color: #FFF7EB;
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  font-family: 'Helios', sans-serif;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s;
+  border: 2px solid #9D8169;
+  animation: fadeIn 1.5s ease-out 0.6s both;
+}
+
+.reserva-button:hover {
+  background-color: transparent;
+  color: #FFF7EB;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .hero-logo {
+    height: 200px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    height: 150px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .reserva-button {
+    padding: 1rem 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo {
+    height: 120px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .reserva-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}

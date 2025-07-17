@@ -1,0 +1,97 @@
+/* Estilos específicos para la página de Reportes */
+.report-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.report-controls {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.report-type-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.type-button {
+  background-color: #E6DFC8;
+  color: #5F5142;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: 'Helios', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.type-button:hover {
+  background-color: #D9D0B4;
+}
+
+.type-button.active {
+  background-color: #5F5142;
+  color: white;
+}
+
+.date-range-selector {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.date-range-selector .form-group {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.date-range-selector label {
+  margin-bottom: 0;
+}
+
+.date-range-selector input {
+  padding: 0.5rem;
+}
+
+.report-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(95, 81, 66, 0.1);
+}
+
+.report-section {
+  margin-bottom: 3rem;
+}
+
+.report-section h2 {
+  font-family: 'Agustey', serif;
+  color: #5F5142;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.no-data-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #7A6A5A;
+  font-style: italic;
+  height: 100%;
+}
