@@ -181,13 +181,13 @@
         <div className="carousel-track">
           {[
             "kalonuno.png",
-            "nosotrosdos.png",
+            "nosotrosdos.jpg",
             "kalondos.png",
-            "nosotrostres.png",
+            "nosotrostres.jpg",
             "kalontres.png",
-            "nosotrosuno.png",
+            "nosotrosuno.jpg",
             "kaloncuatro.png",
-            "nosotroscuatro.png"
+            "nosotroscuatro.jpg"
           ].map((img, index) => (
             <div className="carousel-image" key={index}>
               <img src={`/images/${img}`} alt={`Espacio ${index + 1}`} />
