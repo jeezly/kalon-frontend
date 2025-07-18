@@ -150,50 +150,28 @@ const About = () => {
         </div>
       </section>
 
-{/* Nuestro Espacio */}
-<section className="nuestro-espacio-section">
-  <div className="container">
-    <h2>NUESTRO ESPACIO</h2>
-    <div className="espacio-carousel">
-      <button className="espacio-arrow left" onClick={() => setExpandedImage((prev) => prev === 0 ? 7 : prev - 1)}>
-        &lt;
-      </button>
-
-      <div className="espacio-slide" onClick={() => setExpandedImage(expandedImage)}>
-        <img
-          src={
-            [
-              "/images/kalonuno.png",
-              "/images/nosotrosuno.png",
-              "/images/kalondos.png",
-              "/images/nosotrosdos.png",
-              "/images/kalontres.png",
-              "/images/nosotrostres.png",
-              "/images/kaloncuatro.png",
-              "/images/nosotroscuatro.png"
-            ][expandedImage ?? 0]
-          }
-          alt="Espacio Kalon"
-        />
-      </div>
-
-      <button className="espacio-arrow right" onClick={() => setExpandedImage((prev) => prev === 7 ? 0 : (prev ?? 0) + 1)}>
-        &gt;
-      </button>
-    </div>
-
-    <div className="espacio-dots">
-      {Array.from({ length: 8 }).map((_, idx) => (
-        <span
-          key={idx}
-          className={`dot ${expandedImage === idx ? 'active' : ''}`}
-          onClick={() => setExpandedImage(idx)}
-        />
-      ))}
-    </div>
-  </div>
-</section>
-
+      {/* Nuestro Espacio */}
+      <section className="nuestro-espacio-section">
+        <div className="container">
+          <h2>NUESTRO ESPACIO</h2>
+          <div className="espacio-grid">
+            <div className="espacio-principal" onClick={() => handleImageClick(0)}>
+              <img src="/images/kalonuno.png" alt="Espacio Kalon" />
+            </div>
+            <div className="espacio-tres-fotos">
+              <div className="espacio-pequeno" onClick={() => handleImageClick(1)}>
+                <img src="/images/kalondos.png" alt="Espacio Kalon" />
+              </div>
+              <div className="espacio-pequeno" onClick={() => handleImageClick(2)}>
+                <img src="/images/kalontres.png" alt="Espacio Kalon" />
+              </div>
+              <div className="espacio-pequeno" onClick={() => handleImageClick(3)}>
+                <img src="/images/kaloncuatro.png" alt="Espacio Kalon" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Ubicación */}
       <section className="ubicacion-section">
