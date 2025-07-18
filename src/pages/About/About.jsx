@@ -167,47 +167,39 @@
             </div>
           </section>
 
-{/* Nuestro Espacio */}
+
 <section className="nuestro-espacio-section">
   <div className="container">
     <h2>NUESTRO ESPACIO</h2>
-    <div className="carousel-wrapper">
+    <div className="espacio-carousel">
       <button
-        className="carousel-button left"
+        className="espacio-arrow"
         onClick={() => {
-          document.querySelector(".carousel-track")?.scrollBy({
-            left: -400,
-            behavior: "smooth",
-          });
+          document.querySelector(".carousel-track").scrollBy({ left: -400, behavior: "smooth" });
         }}
       >
         &#10094;
       </button>
-
       <div className="carousel-track">
         {[
-          "kaloncuatro.png",
-          "nosotroscuatro.jpg",
+          "kalonuno.png",
+          "nosotrosdos.jpg",
           "kalondos.png",
           "nosotrostres.jpg",
-          "kalonuno.png",
+          "kalontres.png",
           "nosotrosuno.jpg",
-          "nosotrosdos.jpg",
-          "kalontres.png"
+          "kaloncuatro.png",
+          "nosotroscuatro.jpg"
         ].map((img, index) => (
           <div className="carousel-image" key={index}>
             <img src={`/images/${img}`} alt={`Espacio ${index + 1}`} />
           </div>
         ))}
       </div>
-
       <button
-        className="carousel-button right"
+        className="espacio-arrow"
         onClick={() => {
-          document.querySelector(".carousel-track")?.scrollBy({
-            left: 400,
-            behavior: "smooth",
-          });
+          document.querySelector(".carousel-track").scrollBy({ left: 400, behavior: "smooth" });
         }}
       >
         &#10095;

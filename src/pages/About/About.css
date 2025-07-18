@@ -748,37 +748,51 @@
     margin-bottom: 0.5rem;
   }
 }
-/* NUEVO CARRUSEL NUESTRO ESPACIO */
 .espacio-carousel {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
   margin-top: 2rem;
   flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
 }
 
-.espacio-slide {
-  width: 80%;
-  max-width: 900px;
-  height: 450px;
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 2rem;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-image {
+  min-width: 300px;
+  height: 250px;
+  flex: 0 0 auto;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(95, 81, 66, 0.3);
-  transition: all 0.4s ease;
+  box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.3);
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-.espacio-slide img {
+.carousel-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
-.espacio-slide:hover img {
-  transform: scale(1.03);
+.carousel-image:hover img {
+  transform: scale(1.05);
 }
 
 .espacio-arrow {
@@ -790,7 +804,7 @@
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: background 0.3s;
 }
 
@@ -798,49 +812,15 @@
   background-color: #5F5142;
 }
 
-.espacio-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap: 0.8rem;
-}
-
-.espacio-dots .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ccc;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.espacio-dots .dot.active {
-  background-color: #9D8169;
-  transform: scale(1.2);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .espacio-slide {
-    height: 300px;
-    width: 90%;
+  .carousel-image {
+    min-width: 250px;
+    height: 200px;
   }
 
   .espacio-arrow {
     font-size: 1.5rem;
     width: 40px;
     height: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .espacio-slide {
-    height: 220px;
-  }
-
-  .espacio-arrow {
-    font-size: 1.3rem;
-    width: 35px;
-    height: 35px;
   }
 }
