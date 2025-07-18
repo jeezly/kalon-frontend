@@ -335,7 +335,7 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.3);
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .carousel-image.simple img {
