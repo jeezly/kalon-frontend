@@ -414,8 +414,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .carousel-image {
-    min-width: 250px;
-    height: 180px;
+    min-width: 48px;
+    height: 160px;
   }
 
   .carousel-button {
@@ -434,8 +434,8 @@
 
 @media (max-width: 480px) {
   .carousel-image {
-    min-width: 220px;
-    height: 160px;
+    min-width: 48%px;
+    height: 140px;
   }
 
   .carousel-button {
