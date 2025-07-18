@@ -167,32 +167,40 @@
             </div>
           </section>
 
-
-<section className="nuestro-espacio-section">
-  <div className="container">
-     <h2>NUESTRO ESPACIO</h2>
-          <div className="carousel-wrapper">
-            <button className="carousel-button left" onClick={handleScrollLeft}>&#10094;</button>
-            <div className="carousel-track espacio-carousel" ref={carouselRef}>
-              {[
-                "kalonuno.png",
-                "nosotrosdos.jpg",
-                "kalondos.png",
-                "nosotrostres.jpg",
-                "kalontres.png",
-                "nosotrosuno.jpg",
-                "kaloncuatro.png",
-                "nosotroscuatro.jpg"
-              ].map((img, idx) => (
-                <div className="carousel-image" key={idx}>
-                  <img src={`/images/${img}`} alt={`Espacio ${idx + 1}`} />
-                </div>
-              ))}
+        {/* Nuestro Espacio */}
+  <section className="nuestro-espacio-section">
+    <div className="container">
+      <h2>NUESTRO ESPACIO</h2>
+      <div className="carousel-wrapper">
+        <button className="carousel-button left" onClick={() => {
+          document.querySelector(".carousel-track").scrollBy({ left: -300, behavior: "smooth" });
+        }}>
+          &#10094;
+        </button>
+        <div className="carousel-track">
+          {[
+              "kalonuno.png",
+              "nosotrosdos.jpg",
+              "kalondos.png",
+              "nosotrostres.jpg",
+              "kalontres.png",
+              "nosotrosuno.jpg",
+              "kaloncuatro.png",
+              "nosotroscuatro.jpg"
+                ].map((img, index) => (
+            <div className="carousel-image" key={index}>
+              <img src={`/images/${img}`} alt={`Espacio ${index + 1}`} />
             </div>
-            <button className="carousel-button right" onClick={handleScrollRight}>&#10095;</button>
-          </div>
+          ))}
         </div>
-      </section>
+        <button className="carousel-button right" onClick={() => {
+          document.querySelector(".carousel-track").scrollBy({ left: 300, behavior: "smooth" });
+        }}>
+          &#10095;
+        </button>
+      </div>
+    </div>
+  </section>
 
 
           {/* Ubicación */}
