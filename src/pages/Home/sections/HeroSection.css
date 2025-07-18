@@ -2,7 +2,7 @@
   background: 
     linear-gradient(rgba(95, 81, 66, 0.3), 
     rgba(95, 81, 66, 0.7)),
-    url('/src/assets/images/kalonhome.png') center/cover no-repeat;
+    url('/src/assets/images/kaloome.png') center/cover no-repeat;
   height: 100vh;
   min-height: 600px;
   display: flex;
