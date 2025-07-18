@@ -3,7 +3,6 @@
   import { useNavigate } from 'react-router-dom';
   import { useAuth } from '../../context/AuthContext';
   import './Login.css';
-  import logoBrown from '../../assets/images/logoBrown.png';
   import loginBg from '../../assets/images/login.png';
   import api from '../../services/api';
 
@@ -387,7 +386,7 @@ const handleRecoveryChange = (e) => {
         <div className="login-wrapper">
           <div className="login-box">
             <div className="login-header">
-              <img src={logoBrown} alt="Kalon Studio" className="login-logo" />
+<img src="/img/logoBrown.png" alt="Kalon Studio" className="login-logo" />
               <h2>{showForgotPassword ? 'Recuperar Acceso' : isLoginForm ? 'Bienvenido a Kalon' : 'Crea tu Cuenta'}</h2>
               <p>{showForgotPassword ? 'Ingresa tu correo para recuperar tu contraseña' : isLoginForm ? 'Inicia sesión para reservar tus clases' : 'Regístrate para comenzar tu experiencia'}</p>
             </div>
