@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header className={`header ${isVisible ? 'visible' : 'hidden'} ${isScrolled ? 'scrolled' : ''}`}>
       <Link to="/" className="logo-link">
-        <img src="/src/assets/images/logoCream.png" alt="Kalon Studio" className="logo" />
+        <div className="logo" />
       </Link>
       <nav className="nav-menu">
         <Link to="/"><FaHome className="nav-icon" /></Link>
