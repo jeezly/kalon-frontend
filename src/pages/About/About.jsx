@@ -18,13 +18,13 @@
 
     const carouselImages = [
       "/images/kalonuno.png",
-      "/images/nosotrosuno.png",
+      "/images/nosotrosuno.jpg",
       "/images/kalondos.png",
-      "/images/nosotrosdos.png",
+      "/images/nosotrosdos.jpg",
       "/images/kalontres.png",
-      "/images/nosotrostres.png",
+      "/images/nosotrostres.jpg",
       "/images/kaloncuatro.png",
-      "/images/nosotroscuatro.png"
+      "/images/nosotroscuatro.jpg"
     ];
 
     const nextValue = () => {
