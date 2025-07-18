@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './HeroSection.css';
 
 const HeroSection = () => {
@@ -7,7 +6,14 @@ const HeroSection = () => {
       <div className="hero-content">
         <img src="/images/logoCream.png" alt="Kalon Studio" className="hero-logo" />
         <p className="hero-subtitle">Belleza que se siente</p>
-        <Link to="/clases" className="reserva-button">Reserva ahora</Link>
+        <a
+          href="https://momence.com/u/kalooonstudio-bWchyT"
+          className="reserva-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Reserva ahora
+        </a>
       </div>
     </section>
   );
