@@ -3,11 +3,8 @@
   import { useNavigate } from 'react-router-dom';
   import { useAuth } from '../../context/AuthContext';
   import './Login.css';
+  import loginBg from '../piblic/images/login.png';
   import api from '../../services/api';
-<div
-  className="login-background"
-  style={{ backgroundImage: `url(/images/login.png)` }}
-></div>
 
   const Login = () => {
     const { login } = useAuth();
