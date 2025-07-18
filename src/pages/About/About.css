@@ -371,6 +371,15 @@
   margin: 0 auto;
 }
 
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .carousel-track {
   display: flex;
   gap: 1.5rem;
@@ -379,6 +388,7 @@
   padding: 1rem 0;
   scrollbar-width: none;
 }
+
 
 .carousel-track::-webkit-scrollbar {
   display: none;
@@ -413,22 +423,30 @@
   font-size: 2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  z-index: 10;
   transition: background 0.3s ease;
+  z-index: 5;
 }
 
 .carousel-button:hover {
   background-color: rgba(95, 81, 66, 0.9);
 }
 
+.carousel-button.left,
+.carousel-button.right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .carousel-button.left {
-  margin-right: 1rem;
+  left: -10px;
 }
 
 .carousel-button.right {
-  margin-left: 1rem;
+  right: -10px;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .carousel-image {
     min-width: 250px;
@@ -439,8 +457,15 @@
     font-size: 1.5rem;
     padding: 0.4rem 0.8rem;
   }
-}
 
+  .carousel-button.left {
+    left: 0;
+  }
+
+  .carousel-button.right {
+    right: 0;
+  }
+}
 
 /* Sección Coaches */
 .coaches-section {
