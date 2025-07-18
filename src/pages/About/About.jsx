@@ -98,7 +98,7 @@ const About = () => {
       <section className="quienes-somos-section">
         <div className="quienes-somos-container">
           <div className="quienes-somos-image">
-            <img src="/src/assets/images/quienessomos.png" alt="Estudio Kalon" />
+            <img src="/images/quienessomos.png" alt="Estudio Kalon" />
           </div>
           <div className="quienes-somos-content">
             <h1>¿QUIÉNES SOMOS?</h1>
@@ -124,7 +124,7 @@ const About = () => {
       <section className="nuestra-esencia-section">
         <div className="nuestra-esencia-container">
           <div className="polaroid-left">
-            <img src="/src/assets/images/polaroidUno.png" alt="Filosofía Kalon" />
+            <img src="/images/polaroidUno.png" alt="Filosofía Kalon" />
           </div>
           <div className="nuestra-esencia-content">
             <div className="esencia-scroll">
@@ -144,7 +144,7 @@ const About = () => {
             </div>
           </div>
           <div className="polaroid-right">
-            <img src="/src/assets/images/polaroidDos.png" alt="Filosofía Kalon" />
+            <img src="/images/polaroidDos.png" alt="Filosofía Kalon" />
           </div>
         </div>
       </section>
@@ -176,7 +176,7 @@ const About = () => {
           <div className="tab-content">
             {activeTab === 'mision' && (
               <div className="mision-box">
-                <img src="/src/assets/images/mision.png" alt="Icono Misión" className="mvv-icon" />
+                <img src="/images/mision.png" alt="Icono Misión" className="mvv-icon" />
                 <p>
                   Guiar a cada persona hacia un estilo de vida saludable, integrando cuerpo,
                   mente y espíritu a través del movimiento consciente.
@@ -186,7 +186,7 @@ const About = () => {
 
             {activeTab === 'vision' && (
               <div className="vision-box">
-                <img src="/src/assets/images/vision.png" alt="Icono Visión" className="mvv-icon" />
+                <img src="/images/vision.png" alt="Icono Visión" className="mvv-icon" />
                 <p>
                   Ser un espacio inclusivo y sin prejuicios, donde el bienestar interior
                   florezca en un ambiente armonioso, estético y lleno de intención.
@@ -196,7 +196,7 @@ const About = () => {
 
             {activeTab === 'valores' && (
               <div className="valores-box">
-                <img src="/src/assets/images/values.png" alt="Icono Valores" className="mvv-icon" />
+                <img src="/images/values.png" alt="Icono Valores" className="mvv-icon" />
                 <div className="valores-carousel">
                   <button className="value-nav prev" onClick={prevValue}>&lt;</button>
                   <div className="valor-text">
@@ -216,17 +216,17 @@ const About = () => {
           <h2>NUESTRO ESPACIO</h2>
           <div className="espacio-grid">
             <div className="espacio-principal" onClick={() => handleImageClick(0)}>
-              <img src="/src/assets/images/kalonuno.png" alt="Espacio Kalon" />
+              <img src="/images/kalonuno.png" alt="Espacio Kalon" />
             </div>
             <div className="espacio-tres-fotos">
               <div className="espacio-pequeno" onClick={() => handleImageClick(1)}>
-                <img src="/src/assets/images/kalondos.png" alt="Espacio Kalon" />
+                <img src="/images/kalondos.png" alt="Espacio Kalon" />
               </div>
               <div className="espacio-pequeno" onClick={() => handleImageClick(2)}>
-                <img src="/src/assets/images/kalontres.png" alt="Espacio Kalon" />
+                <img src="/images/kalontres.png" alt="Espacio Kalon" />
               </div>
               <div className="espacio-pequeno" onClick={() => handleImageClick(3)}>
-                <img src="/src/assets/images/kaloncuatro.png" alt="Espacio Kalon" />
+                <img src="/images/kaloncuatro.png" alt="Espacio Kalon" />
               </div>
             </div>
           </div>
@@ -331,10 +331,10 @@ const About = () => {
         <div className="image-modal" onClick={() => setExpandedImage(null)}>
           <img 
             src={
-              expandedImage === 0 ? "/src/assets/images/kalonuno.png" :
-              expandedImage === 1 ? "/src/assets/images/kalondos.png" :
-              expandedImage === 2 ? "/src/assets/images/kalontres.png" :
-              "/src/assets/images/kaloncuatro.png"
+              expandedImage === 0 ? "/images/kalonuno.png" :
+              expandedImage === 1 ? "/images/kalondos.png" :
+              expandedImage === 2 ? "/images/kalontres.png" :
+              "/images/kaloncuatro.png"
             } 
             alt="Espacio Kalon Studio" 
           />
