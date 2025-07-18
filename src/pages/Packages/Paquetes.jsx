@@ -195,7 +195,7 @@ const Paquetes = () => {
         </div>
       </div>
       
-      <Footer />
+  
     </div>
   );
 };
