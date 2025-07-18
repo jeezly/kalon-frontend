@@ -3,7 +3,7 @@
   import { useNavigate } from 'react-router-dom';
   import { useAuth } from '../../context/AuthContext';
   import './Login.css';
-  import loginBg from '../../assets/images/login.png';
+  import loginBg from '../piblic/images/login.png';
   import api from '../../services/api';
 
   const Login = () => {
