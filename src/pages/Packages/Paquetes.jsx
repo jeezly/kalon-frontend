@@ -1,6 +1,4 @@
-// src/pages/Cliente/Paquetes.jsx
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -8,32 +6,31 @@ import './Paquetes.css';
 
 const paquetesData = {
   'Pilates Reformer': [
-    { nombre: 'Clase suelta', incluye_clases: 1, vigencia_dias: 7, precio_normal: 200.00 },
-    { nombre: 'Paquete 4 clases', incluye_clases: 4, vigencia_dias: 15, precio_normal: 750.00, precio_lasalle: 675.00 },
-    { nombre: 'Paquete 8 clases', incluye_clases: 8, vigencia_dias: 30, precio_normal: 1399.00, precio_lasalle: 1231.12 },
-    { nombre: 'Paquete 12 clases', incluye_clases: 12, vigencia_dias: 30, precio_normal: 1799.00, precio_lasalle: 1529.15 },
-    { nombre: 'Ilimitado', incluye_clases: 999, vigencia_dias: 30, precio_normal: 2299.00 }
+    { nombre: 'Clase suelta', incluye_clases: 1, vigencia_dias: 7, precio_normal: 200.0 },
+    { nombre: 'Paquete 4 clases', incluye_clases: 4, vigencia_dias: 15, precio_normal: 750.0, precio_lasalle: 675.0 },
+    { nombre: 'Paquete 8 clases', incluye_clases: 8, vigencia_dias: 30, precio_normal: 1399.0, precio_lasalle: 1231.12 },
+    { nombre: 'Paquete 12 clases', incluye_clases: 12, vigencia_dias: 30, precio_normal: 1799.0, precio_lasalle: 1529.15 },
+    { nombre: 'Ilimitado', incluye_clases: 999, vigencia_dias: 30, precio_normal: 2299.0 }
   ],
-  'Barre': [
-    { nombre: 'Clase suelta', incluye_clases: 1, vigencia_dias: 7, precio_normal: 190.00 },
-    { nombre: 'Paquete 4 clases', incluye_clases: 4, vigencia_dias: 15, precio_normal: 730.00, precio_lasalle: 657.00 },
-    { nombre: 'Paquete 8 clases', incluye_clases: 8, vigencia_dias: 30, precio_normal: 1299.00, precio_lasalle: 1143.12 },
-    { nombre: 'Paquete 12 clases', incluye_clases: 12, vigencia_dias: 30, precio_normal: 1649.00, precio_lasalle: 1401.65 },
-    { nombre: 'Ilimitado', incluye_clases: 999, vigencia_dias: 30, precio_normal: 2149.00 }
+  Barre: [
+    { nombre: 'Clase suelta', incluye_clases: 1, vigencia_dias: 7, precio_normal: 190.0 },
+    { nombre: 'Paquete 4 clases', incluye_clases: 4, vigencia_dias: 15, precio_normal: 730.0, precio_lasalle: 657.0 },
+    { nombre: 'Paquete 8 clases', incluye_clases: 8, vigencia_dias: 30, precio_normal: 1299.0, precio_lasalle: 1143.12 },
+    { nombre: 'Paquete 12 clases', incluye_clases: 12, vigencia_dias: 30, precio_normal: 1649.0, precio_lasalle: 1401.65 },
+    { nombre: 'Ilimitado', incluye_clases: 999, vigencia_dias: 30, precio_normal: 2149.0 }
   ],
-  'Yoga': [
-    { nombre: 'Clase suelta', incluye_clases: 1, vigencia_dias: 7, precio_normal: 180.00 },
-    { nombre: 'Paquete 4 clases', incluye_clases: 4, vigencia_dias: 15, precio_normal: 699.00, precio_lasalle: 629.10 },
-    { nombre: 'Paquete 8 clases', incluye_clases: 8, vigencia_dias: 30, precio_normal: 1199.00, precio_lasalle: 1055.12 },
-    { nombre: 'Paquete 12 clases', incluye_clases: 12, vigencia_dias: 30, precio_normal: 1499.00, precio_lasalle: 1274.15 },
-    { nombre: 'Ilimitado', incluye_clases: 999, vigencia_dias: 30, precio_normal: 1999.00 }
+  Yoga: [
+    { nombre: 'Clase suelta', incluye_clases: 1, vigencia_dias: 7, precio_normal: 180.0 },
+    { nombre: 'Paquete 4 clases', incluye_clases: 4, vigencia_dias: 15, precio_normal: 699.0, precio_lasalle: 629.1 },
+    { nombre: 'Paquete 8 clases', incluye_clases: 8, vigencia_dias: 30, precio_normal: 1199.0, precio_lasalle: 1055.12 },
+    { nombre: 'Paquete 12 clases', incluye_clases: 12, vigencia_dias: 30, precio_normal: 1499.0, precio_lasalle: 1274.15 },
+    { nombre: 'Ilimitado', incluye_clases: 999, vigencia_dias: 30, precio_normal: 1999.0 }
   ]
 };
 
 const Paquetes = () => {
   const [currentType, setCurrentType] = useState('Pilates Reformer');
   const [currentPackageIndex, setCurrentPackageIndex] = useState(0);
-  const navigate = useNavigate();
 
   const classTypes = Object.keys(paquetesData);
   const currentPackages = paquetesData[currentType];
@@ -58,15 +55,22 @@ const Paquetes = () => {
     setCurrentPackageIndex((prev) => (prev + 1) % currentPackages.length);
   };
 
-  const handlePackageClick = () => {
-    navigate('/login');
-  };
-
   return (
     <div className="paquetes-page">
       <Header />
-      <div className="paquetes-hero">
-        <div className="hero-overlay"></div>
+
+      <div
+        className="paquetes-hero"
+        style={{
+          backgroundImage: `linear-gradient(rgba(95, 81, 66, 0.3), rgba(95, 81, 66, 0.7)), url('/images/paquetes.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          padding: '100px 20px',
+          color: '#FFF7EB',
+          textAlign: 'center'
+        }}
+      >
         <h1>Descubre tu experiencia ideal</h1>
         <p className="hero-subtitle">Paquetes diseñados para adaptarse a tus necesidades</p>
       </div>
@@ -85,7 +89,6 @@ const Paquetes = () => {
               <div
                 key={pkg.nombre}
                 className={`paquete-card ${index === currentPackageIndex ? 'active' : ''}`}
-                onClick={handlePackageClick}
               >
                 <div className="paquete-header">
                   <img src="/images/logoCream.png" alt="Logo Cream" className="paquete-logo" />
@@ -118,7 +121,14 @@ const Paquetes = () => {
                   </div>
 
                   <div className="paquete-cta">
-                    <button className="reservar-button">Reservar ahora</button>
+                    <a
+                      href="https://momence.com/u/kalooonstudio-bWchyT"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="reservar-button"
+                    >
+                      Reservar ahora
+                    </a>
                   </div>
                 </div>
               </div>
