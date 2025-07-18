@@ -370,14 +370,12 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .carousel-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .carousel-track {
@@ -385,10 +383,9 @@
   gap: 1.5rem;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 1rem 0;
+  padding: 0 2.5rem; /* espacio para que las flechas no bloqueen contenido */
   scrollbar-width: none;
 }
-
 
 .carousel-track::-webkit-scrollbar {
   display: none;
@@ -396,9 +393,9 @@
 
 .carousel-image {
   min-width: 300px;
+  height: 250px;
   flex: 0 0 auto;
-  height: 200px;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.3);
   transition: transform 0.3s ease;
@@ -417,55 +414,48 @@
 }
 
 .carousel-button {
-  background-color: rgba(157, 129, 105, 0.7);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  z-index: 5;
-}
-
-.carousel-button:hover {
-  background-color: rgba(95, 81, 66, 0.9);
-}
-
-.carousel-button.left,
-.carousel-button.right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  color: #9D8169;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: #9D8169;
+  color: white;
 }
 
 .carousel-button.left {
-  left: -10px;
+  left: 10px;
 }
 
 .carousel-button.right {
-  right: -10px;
+  right: 10px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .carousel-image {
     min-width: 250px;
-    height: 180px;
+    height: 200px;
   }
 
   .carousel-button {
+    width: 36px;
+    height: 36px;
     font-size: 1.5rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .carousel-button.left {
-    left: 0;
-  }
-
-  .carousel-button.right {
-    right: 0;
   }
 }
+
 
 /* Sección Coaches */
 .coaches-section {
