@@ -98,7 +98,7 @@ const About = () => {
       <section className="quienes-somos-section">
         <div className="quienes-somos-container">
           <div className="quienes-somos-image">
-            <img src="/images/quienessomos.png" alt="Estudio Kalon" />
+            <img src="/images/quienesSomos.png" alt="Estudio Kalon" />
           </div>
           <div className="quienes-somos-content">
             <h1>¿QUIÉNES SOMOS?</h1>

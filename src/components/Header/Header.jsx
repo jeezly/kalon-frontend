@@ -30,10 +30,7 @@ const Header = () => {
         <Link to="/nosotros">Nosotros</Link>
         <Link to="/clases">Clases</Link>
         <Link to="/paquetes">Paquetes</Link>
-        <Link to="/login" className="login-link">
-          <FaUser className="login-icon" />
-          <span>Login</span>
-        </Link>
+        
       </nav>
     </header>
   );

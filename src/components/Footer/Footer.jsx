@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-logo">
-          <img src="/src/assets/images/logoblack.png" alt="Kalon Studio" className="logo" />
+          <img src="/images/logoblack.png" alt="Kalon Studio" className="logo" />
         </div>
       </div>
       <div className="copyright">
