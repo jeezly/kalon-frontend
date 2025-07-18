@@ -122,3 +122,16 @@
     padding: 20px;
   }
 }
+.calendars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.calendar-img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(95, 81, 66, 0.1);
+  object-fit: contain;
+}
