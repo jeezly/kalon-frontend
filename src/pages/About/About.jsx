@@ -1,21 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import api from '../../services/api';
 import './About.css';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('mision');
-  const [currentSpecialty, setCurrentSpecialty] = useState('Reformer');
-  const [currentCoachIndex, setCurrentCoachIndex] = useState(0);
   const [currentValueIndex, setCurrentValueIndex] = useState(0);
   const [expandedImage, setExpandedImage] = useState(null);
-  const [coaches, setCoaches] = useState({
-    Reformer: [],
-    Barre: [],
-    Yoga: []
-  });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const valores = [
     "Crecimiento",
@@ -25,51 +15,6 @@ const About = () => {
     "Comunidad",
     "Estilo de vida"
   ];
-
-  useEffect(() => {
-    const fetchCoaches = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        const [reformerResponse, barreResponse, yogaResponse] = await Promise.all([
-          api.getCoachesBySpecialty('Reformer'),
-          api.getCoachesBySpecialty('Barre'),
-          api.getCoachesBySpecialty('Yoga')
-        ]);
-
-        setCoaches({
-          Reformer: reformerResponse.data.data || [],
-          Barre: barreResponse.data.data || [],
-          Yoga: yogaResponse.data.data || []
-        });
-        
-      } catch (err) {
-        console.error('Error fetching coaches:', err);
-        setError('Error al cargar los coaches. Por favor intenta más tarde.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCoaches();
-  }, []);
-
-  const currentCoaches = coaches[currentSpecialty] || [];
-
-  const nextCoach = () => {
-    if (currentCoaches.length === 0) return;
-    setCurrentCoachIndex((prevIndex) => 
-      prevIndex === currentCoaches.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevCoach = () => {
-    if (currentCoaches.length === 0) return;
-    setCurrentCoachIndex((prevIndex) => 
-      prevIndex === 0 ? currentCoaches.length - 1 : prevIndex - 1
-    );
-  };
 
   const nextValue = () => {
     setCurrentValueIndex((prevIndex) => 
@@ -81,11 +26,6 @@ const About = () => {
     setCurrentValueIndex((prevIndex) => 
       prevIndex === 0 ? valores.length - 1 : prevIndex - 1
     );
-  };
-
-  const changeSpecialty = (specialty) => {
-    setCurrentSpecialty(specialty);
-    setCurrentCoachIndex(0);
   };
 
   const handleImageClick = (imageIndex) => {
@@ -230,75 +170,6 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Nuestros Coaches */}
-      <section className="coaches-section">
-        <div className="container">
-          <h2>NUESTROS COACHES</h2>
-          <div className="specialty-selector">
-            <button 
-              className={`specialty-btn ${currentSpecialty === 'Reformer' ? 'active' : ''}`}
-              onClick={() => changeSpecialty('Reformer')}
-            >
-              REFORMER
-            </button>
-            <button 
-              className={`specialty-btn ${currentSpecialty === 'Barre' ? 'active' : ''}`}
-              onClick={() => changeSpecialty('Barre')}
-            >
-              BARRE
-            </button>
-            <button 
-              className={`specialty-btn ${currentSpecialty === 'Yoga' ? 'active' : ''}`}
-              onClick={() => changeSpecialty('Yoga')}
-            >
-              YOGA
-            </button>
-          </div>
-          
-          {error ? (
-            <div className="error-message">{error}</div>
-          ) : loading ? (
-            <div className="loading-coaches">Cargando coaches...</div>
-          ) : currentCoaches.length > 0 ? (
-            <>
-              <div className="coach-carousel">
-                <button className="nav-arrow" onClick={prevCoach}>&lt;</button>
-                
-                <div className="coach-card">
-                  <div className="coach-image">
-                    <img 
-                      src={currentCoaches[currentCoachIndex].foto} 
-                      alt={currentCoaches[currentCoachIndex].nombre} 
-                      onError={(e) => {
-                        e.target.src = '/server/assets/images/coach-default.png';
-                        e.target.onerror = null;
-                      }}
-                    />
-                  </div>
-                  <h3>{currentCoaches[currentCoachIndex].nombre}</h3>
-                  <p>{currentSpecialty}</p>
-                  <div className="coach-contact">
-                    <a href={`tel:${currentCoaches[currentCoachIndex].telefono}`}>
-                      {currentCoaches[currentCoachIndex].telefono}
-                    </a>
-                  </div>
-                </div>
-                
-                <button className="nav-arrow" onClick={nextCoach}>&gt;</button>
-              </div>
-              
-              <div className="coach-indicator">
-                {currentCoachIndex + 1} / {currentCoaches.length}
-              </div>
-            </>
-          ) : (
-            <div className="no-coaches-message">
-              No hay coaches disponibles para esta especialidad.
-            </div>
-          )}
         </div>
       </section>
 

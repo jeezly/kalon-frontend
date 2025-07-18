@@ -116,7 +116,7 @@ const Paquetes = () => {
                     </div>
                     <div className="detail-item">
                       <span className="detail-label">Duración:</span>
-                      <span className="detail-value">60 min/clase</span>
+                      <span className="detail-value">50 min/clase</span>
                     </div>
                   </div>
 
@@ -148,7 +148,7 @@ const Paquetes = () => {
         </div>
       </div>
 
-      <Footer />
+      
     </div>
   );
 };
