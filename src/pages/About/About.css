@@ -301,81 +301,16 @@
 }
 
 /* Sección Nuestro Espacio */
-.nuestro-espacio-section {
-  padding: 5rem 0;
-  background-color: #FFF7EB;
-}
-
-.nuestro-espacio-section h2 {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #5F5142;
-}
-
-.espacio-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.espacio-tres-fotos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.espacio-principal, .espacio-pequeno {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.espacio-principal {
-  height: 400px;
-}
-
-.espacio-pequeno {
-  height: 200px;
-}
-
-.espacio-principal img, 
-.espacio-pequeno img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.espacio-principal:hover, 
-.espacio-pequeno:hover {
-  box-shadow: 12px 12px 30px rgba(95, 81, 66, 0.4);
-}
-
-.espacio-principal:hover img,
-.espacio-pequeno:hover img {
-  transform: scale(1.05);
-}
-.carousel-container {
+/* NUEVO CARRUSEL NUESTRO ESPACIO */
+.carousel-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 0;
+  overflow: hidden;
 }
 
 .carousel-track {
@@ -383,7 +318,8 @@
   gap: 1.5rem;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 0 2.5rem; /* espacio para que las flechas no bloqueen contenido */
+  padding: 0 3rem;
+  width: 100%;
   scrollbar-width: none;
 }
 
@@ -392,12 +328,13 @@
 }
 
 .carousel-image {
-  min-width: 300px;
-  height: 250px;
+  min-width: 80%;
+  max-width: 900px;
+  height: 400px;
   flex: 0 0 auto;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 8px 8px 24px rgba(95, 81, 66, 0.3);
+  box-shadow: 0 10px 30px rgba(95, 81, 66, 0.3);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -424,8 +361,8 @@
   font-size: 2rem;
   color: #9D8169;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   z-index: 10;
   transition: all 0.3s ease;
 }
@@ -436,25 +373,39 @@
 }
 
 .carousel-button.left {
-  left: 10px;
+  left: 0.5rem;
 }
 
 .carousel-button.right {
-  right: 10px;
+  right: 0.5rem;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .carousel-image {
-    min-width: 250px;
-    height: 200px;
+    min-width: 90%;
+    height: 280px;
   }
 
   .carousel-button {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     font-size: 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .carousel-image {
+    height: 220px;
+  }
+
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+}
+
 
 
 /* Sección Coaches */

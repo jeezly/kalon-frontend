@@ -167,40 +167,54 @@
             </div>
           </section>
 
-        {/* Nuestro Espacio */}
-  <section className="nuestro-espacio-section">
-    <div className="container">
-      <h2>NUESTRO ESPACIO</h2>
-      <div className="carousel-wrapper">
-        <button className="carousel-button left" onClick={() => {
-          document.querySelector(".carousel-track").scrollBy({ left: -300, behavior: "smooth" });
-        }}>
-          &#10094;
-        </button>
-        <div className="carousel-track">
-          {[
-              "kalonuno.png",
-              "nosotrosdos.jpg",
-              "kalondos.png",
-              "nosotrostres.jpg",
-              "kalontres.png",
-              "nosotrosuno.jpg",
-              "kaloncuatro.png",
-              "nosotroscuatro.jpg"
-                ].map((img, index) => (
-            <div className="carousel-image" key={index}>
-              <img src={`/images/${img}`} alt={`Espacio ${index + 1}`} />
-            </div>
-          ))}
-        </div>
-        <button className="carousel-button right" onClick={() => {
-          document.querySelector(".carousel-track").scrollBy({ left: 300, behavior: "smooth" });
-        }}>
-          &#10095;
-        </button>
+{/* Nuestro Espacio */}
+<section className="nuestro-espacio-section">
+  <div className="container">
+    <h2>NUESTRO ESPACIO</h2>
+    <div className="carousel-wrapper">
+      <button
+        className="carousel-button left"
+        onClick={() => {
+          document.querySelector(".carousel-track")?.scrollBy({
+            left: -400,
+            behavior: "smooth",
+          });
+        }}
+      >
+        &#10094;
+      </button>
+
+      <div className="carousel-track">
+        {[
+          "kaloncuatro.png",
+          "nosotroscuatro.jpg",
+          "kalondos.png",
+          "nosotrostres.jpg",
+          "kalonuno.png",
+          "nosotrosuno.jpg",
+          "nosotrosdos.jpg",
+          "kalontres.png"
+        ].map((img, index) => (
+          <div className="carousel-image" key={index}>
+            <img src={`/images/${img}`} alt={`Espacio ${index + 1}`} />
+          </div>
+        ))}
       </div>
+
+      <button
+        className="carousel-button right"
+        onClick={() => {
+          document.querySelector(".carousel-track")?.scrollBy({
+            left: 400,
+            behavior: "smooth",
+          });
+        }}
+      >
+        &#10095;
+      </button>
     </div>
-  </section>
+  </div>
+</section>
 
 
           {/* Ubicación */}
