@@ -35,7 +35,7 @@
 .logo {
   width: 120px;
   height: 60px;
-  background: url('/src/assets/images/logoCream.png') center/contain no-repeat;
+background: url('/img/logoCream.png') center/contain no-repeat;
   transition: transform 0.3s;
 }
 
