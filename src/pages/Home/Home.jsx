@@ -6,17 +6,17 @@ const Home = () => {
   const classes = [
     {
       name: "Pilates Reformer",
-      icon: "/src/assets/images/reformer.png",
+      icon: "/images/reformer.png",
       desc: "Técnicas avanzadas con máquina reformer"
     },
     {
       name: "Barre",
-      icon: "/src/assets/images/barre.png",
+      icon: "/images/barre.png",
       desc: "Fusión de ballet, pilates y yoga"
     },
     {
       name: "Yoga",
-      icon: "/src/assets/images/yoga.png",
+      icon: "/images/yoga.png",
       desc: "Armonía entre cuerpo y mente"
     }
   ];
