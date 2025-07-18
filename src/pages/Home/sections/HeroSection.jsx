@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <img src="/publi/images/logocream.png" alt="Kalon Studio" className="hero-logo" />
+        <img src="/public/images/logocream.png" alt="Kalon Studio" className="hero-logo" />
         <p className="hero-subtitle">Belleza que se siente</p>
         <Link to="/clases" className="reserva-button">Reserva ahora</Link>
       </div>
