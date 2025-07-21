@@ -31,7 +31,11 @@ const Footer = () => {
 
           <div className="contact-item">
             <FaPhoneAlt className="contact-icon" />
-            <a href="tel:4777502234">477 7502234</a>
+            <a 
+            href="http://wa.me/5247775022344"
+            target="blank"
+            rel="noopener noreferrer"
+            >477 7502234</a>
           </div>
 
           <div className="contact-item">
