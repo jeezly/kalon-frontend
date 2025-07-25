@@ -1,4 +1,11 @@
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaInstagram,
+  FaFacebook,
+  FaTiktok
+} from 'react-icons/fa';
 import './footer.css';
 
 const Footer = () => {
@@ -32,10 +39,12 @@ const Footer = () => {
           <div className="contact-item">
             <FaPhoneAlt className="contact-icon" />
             <a 
-            href="http://wa.me/5247775022344"
-            target="blank"
-            rel="noopener noreferrer"
-            >477 7502234</a>
+              href="http://wa.me/5247775022344"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              477 7502234
+            </a>
           </div>
 
           <div className="contact-item">
@@ -69,6 +78,13 @@ const Footer = () => {
             >
               @kalon.studio0
             </a>
+          </div>
+
+          {/* NUEVA SECCIÓN DE POLÍTICAS */}
+          <div className="footer-policies">
+            <a href="/docs/aviso-de-privacidad.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a>
+            <a href="/docs/terminos-condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
+            <a href="/docs/reglamento-kalon.pdf" target="_blank" rel="noopener noreferrer">Reglamento del Estudio</a>
           </div>
 
         </div>
