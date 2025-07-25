@@ -66,34 +66,44 @@ const Footer = () => {
       case 'reglamento':
         return (
           <>
-            <h2 className="modal-title">🧘 REGLAMENTO GENERAL DEL ESTUDIO</h2>
-            <p><strong>1. CONDUCTA DENTRO DEL ESTUDIO</strong><br />
-              Kalon es un espacio libre de juicios. Te invitamos a mantener una actitud amable, respetuosa y consciente hacia las demás personas. Evita conversaciones con volumen alto dentro de las salas. El silencio también es una forma de cuidado. El uso de lenguaje ofensivo o actitudes agresivas no están permitidos.
-            </p>
-            <p><strong>2. PUNTUALIDAD Y ASISTENCIA</strong><br />
-              Llega al menos 10 minutos antes de tu clase. No se permite el ingreso si han pasado más de 5 minutos del inicio. Cancela con mínimo <strong>10 horas de anticipación</strong> si no puedes asistir.
-            </p>
-            <p><strong>3. USO DEL ESPACIO Y MATERIALES</strong><br />
-              Deja limpio y ordenado. Usa toalla personal y desinfecta los props. No se permite comer.
-            </p>
-            <p><strong>4. REGADERAS Y LOCKERS</strong><br />
-              Sé breve en la regadera. Usa lockers solo durante clase. Usa sandalias en regaderas.
-            </p>
-            <p><strong>5. HIGIENE Y VESTIMENTA</strong><br />
-              Ropa limpia y adecuada. Buena higiene personal.
-            </p>
-            <p><strong>6. DISPOSITIVOS MÓVILES</strong><br />
-              En silencio. Puedes grabar si no interrumpes y con respeto.
-            </p>
-            <p><strong>7. AMBIENTE EMOCIONAL</strong><br />
-              Espacio seguro. Si estás mal, respira, muévete, y déjalo ir.
-            </p>
-            <p><strong>8. CANCELACIONES Y CLASES PERDIDAS</strong><br />
-              Si faltas o cancelas tarde, se descuenta tu clase. Si fue fuerza mayor, escríbenos.
-            </p>
-            <p><strong>9. COMUNIDAD KALON</strong><br />
-              Apóyate, respeta, y sé parte. Quien no respete puede ser suspendida.
-            </p>
+<h2 className="modal-title">🧘 REGLAMENTO GENERAL DEL ESTUDIO</h2>
+
+<p><strong>1. CONDUCTA DENTRO DEL ESTUDIO</strong><br />
+Kalon es un espacio libre de juicios. Te invitamos a mantener una actitud amable, respetuosa y consciente hacia las demás personas. Evita conversaciones con volumen alto dentro de las salas. El silencio también es una forma de cuidado. El uso de lenguaje ofensivo o actitudes agresivas no están permitidos.
+</p>
+
+<p><strong>2. PUNTUALIDAD Y ASISTENCIA</strong><br />
+Te recomendamos llegar al menos 10 minutos antes de tu clase. No se permitirá el ingreso si han pasado más de 5 minutos del inicio. Cancela con al menos <strong>10 horas de anticipación</strong> si no puedes asistir.
+</p>
+
+<p><strong>3. USO DEL ESPACIO Y MATERIALES</strong><br />
+Deja limpio y ordenado. Usa toalla personal y desinfecta los props. No se permite comer dentro de las salas.
+</p>
+
+<p><strong>4. REGADERAS Y LOCKERS</strong><br />
+Sé breve en la regadera. Usa lockers solo durante clase. Usa sandalias por higiene.
+</p>
+
+<p><strong>5. HIGIENE Y VESTIMENTA</strong><br />
+Usa ropa cómoda, limpia y adecuada para la clase. Es importante venir con buena higiene personal.
+</p>
+
+<p><strong>6. DISPOSITIVOS MÓVILES</strong><br />
+Deben mantenerse en modo silencio. Puedes grabar o tomar fotos si no interrumpes y usas el contenido con respeto.
+</p>
+
+<p><strong>7. AMBIENTE EMOCIONAL</strong><br />
+Este es un espacio de cuidado emocional. Si estás pasando por un mal día, estás en el lugar correcto: respira, muévete y déjalo ir.
+</p>
+
+<p><strong>8. CANCELACIONES Y CLASES PERDIDAS</strong><br />
+Si faltas sin aviso o cancelas fuera de tiempo, se descuenta tu clase. Si fue por fuerza mayor, escríbenos y lo revisamos con comprensión.
+</p>
+
+<p><strong>9. COMUNIDAD KALON</strong><br />
+Queremos que te sientas parte de una comunidad de mujeres que se apoyan, se inspiran y se cuidan. Las clientas que no respeten este reglamento podrán ser suspendidas temporal o permanentemente.
+</p>
+
           </>
         );
       default:
