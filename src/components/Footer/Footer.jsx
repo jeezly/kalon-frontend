@@ -81,10 +81,25 @@ const Footer = () => {
           </div>
 
           {/* NUEVA SECCIÓN DE POLÍTICAS */}
-          <div className="footer-policies">
-            <a href="/docs/aviso-de-privacidad.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a>
-            <a href="/docs/terminos-condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
-            <a href="/docs/reglamento-kalon.pdf" target="_blank" rel="noopener noreferrer">Reglamento del Estudio</a>
+          <div className="footer-policies-text">
+            <details>
+              <summary>📄 Aviso de Privacidad</summary>
+              <p>
+                En Kalon Studio, con domicilio en Nubes 201, León, Gto., usamos tu información solo para gestionar tus clases, aplicar descuentos y enviarte información relevante. Tus datos están protegidos conforme a la ley. Puedes ejercer tus derechos ARCO escribiéndonos a kalon.studio13@gmail.com. No compartimos tu información salvo por obligación legal o servicios necesarios como Stripe.
+              </p>
+            </details>
+            <details>
+              <summary>📜 Términos y Condiciones</summary>
+              <p>
+                El uso de este sitio implica tu aceptación de nuestras políticas. Las clases se reservan con créditos. Las cancelaciones deben hacerse con al menos 10 horas de anticipación. No se permite ingresar si han pasado más de 5 minutos del inicio. Reservar implica aceptar el reglamento interno de Kalon Studio.
+              </p>
+            </details>
+            <details>
+              <summary>🧘 Reglamento del Estudio</summary>
+              <p>
+                Mantén una actitud amable y respetuosa. Llega al menos 10 minutos antes. Usa toalla, desinfecta props, y respeta el ambiente emocional. Las cancelaciones tardías pierden el crédito. No se permite lenguaje ofensivo ni actitudes agresivas.
+              </p>
+            </details>
           </div>
 
         </div>
@@ -93,6 +108,7 @@ const Footer = () => {
           <img src="/images/logoblack.png" alt="Kalon Studio" className="logo" />
         </div>
       </div>
+
       <div className="copyright">
         <p>© {new Date().getFullYear()} Kalon Studio. Todos los derechos reservados.</p>
       </div>
