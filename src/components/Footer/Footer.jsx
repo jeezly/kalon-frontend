@@ -53,7 +53,7 @@ const Footer = () => {
             </p>
             <p><strong>Paquetes y Descuentos</strong><br />
               • Los paquetes tienen vigencia definida visible al momento de compra.<br />
-              • Usuarios con credencial válida de La Salle León reciben precio especial, aplicado tras validación.
+              • Usuarios con credencial válida en Universidad La Salle Bajio reciben precio especial, aplicado tras validación.
             </p>
             <p><strong>Propiedad Intelectual</strong><br />
               Todos los contenidos del sitio son propiedad de Kalon Studio. Está prohibido el uso no autorizado de fotografías, textos, logotipos o cualquier material visual.

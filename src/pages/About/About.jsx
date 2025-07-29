@@ -180,13 +180,13 @@
 
         <div className="carousel-track simple">
           {[
-            "kalonuno.png",
+            
             "nosotrosdos.jpg",
-            "kalondos.png",
+         
             "nosotrostres.jpg",
-            "kalontres.png",
+        
             "nosotrosuno.jpg",
-            "kaloncuatro.png",
+            ,
             "nosotroscuatro.jpg"
           ].map((img, index) => (
             <div className="carousel-image simple" key={index}>
